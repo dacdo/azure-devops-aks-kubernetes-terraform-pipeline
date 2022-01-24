@@ -103,14 +103,14 @@ stages:
                 environmentServiceName: 'terraform-aks-azurerm-svc-con'
                 commandOptions: '$(Pipeline.Workspace)/terraform-manifests-out/$(DEV_ENVIRONMENT)-$(Build.BuildId).out'
                 allowTelemetryCollection: false
-            - task: TerraformCLI@0
-              displayName: Terraform Destroy
-              inputs:
-                command: 'destroy'
-                workingDirectory: '$(Pipeline.Workspace)/terraform-manifests-out'
-                environmentServiceName: 'terraform-aks-azurerm-svc-con'
-                commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(DEV_ENVIRONMENT)'
-                allowTelemetryCollection: false
+            # - task: TerraformCLI@0
+            #   displayName: Terraform Destroy
+            #   inputs:
+            #     command: 'destroy'
+            #     workingDirectory: '$(Pipeline.Workspace)/terraform-manifests-out'
+            #     environmentServiceName: 'terraform-aks-azurerm-svc-con'
+            #     commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(DEV_ENVIRONMENT)'
+            #     allowTelemetryCollection: false
 
 # Stage-2: Deploy Stages for Dev & QA
 # Deployment-2: Deploy QA AKS Cluster
