@@ -109,6 +109,7 @@ stages:
                 command: 'destroy'
                 workingDirectory: '$(Pipeline.Workspace)/terraform-manifests-out'
                 environmentServiceName: 'terraform-aks-azurerm-svc-con'
+                commandOptions: -var environment=$(DEV_ENVIRONMENT)
                 allowTelemetryCollection: false
 
 # Stage-2: Deploy Stages for Dev & QA
